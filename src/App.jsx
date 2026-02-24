@@ -22,10 +22,6 @@ const profile = {
       href: 'https://www.linkedin.com/in/tejaswi-padigala',
     },
     {
-      label: 'Portfolio',
-      href: portfolioUrl,
-    },
-    {
       label: 'Resume',
       href: resumeUrl,
     },
@@ -347,7 +343,7 @@ function App() {
             </div>
             <div className="hero-links">
               {profile.links.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="chip">
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="chip chip-highlight">
                   {link.label}
                 </a>
               ))}
@@ -436,13 +432,7 @@ function App() {
         <section className="section" id="projects">
           <div className="section-header">
             <h2>Project experience</h2>
-            <p className="muted">
-              Project details sourced from the projects portfolio.{' '}
-              <a href={projectsUrl} target="_blank" rel="noreferrer">
-                View the full PDF
-              </a>
-              .
-            </p>
+            <p className="muted">Project details sourced from the projects portfolio.</p>
           </div>
           <div className="project-grid">
             {projects.map((project) => (
