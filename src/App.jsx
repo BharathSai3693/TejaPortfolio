@@ -214,6 +214,27 @@ const certifications = [
   },
 ]
 
+const achievements = [
+  {
+    title: "Founder's Platinum Milestone - Amway Business (India)",
+    details:
+      'Achieved the Founder’s Platinum milestone by leading a 1,000+ member team and sustaining $10K+ USD in monthly team turnover. Conducted performance analysis, reviewed productivity metrics, and held structured guidance and review meetings to align goals and improve outcomes.',
+  },
+  {
+    title: 'Member of Innovation and Research – Street Cause, India',
+    details:
+      'The unit aims to bring about changes in society by developing and advancing new ideas while implementing new processes.',
+  },
+  {
+    title: 'Member of Voice 4 Girls Foundation - Hyderabad, India',
+    details:
+      'Mentored marginalized adolescents in teaching life-skills through activity-based camps. Served as a counselor for training sessions and debriefs.',
+  },
+  {
+    title: 'Campus Residential Student President, GNITC, Hyderabad, India',
+    details: 'Student representative for the residential student community.',
+  },
+]
 
 function App() {
   const rootRef = useRef(null)
@@ -334,16 +355,58 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-logos">
+        <section className="section" id="experience">
           <div className="section-header">
-            <p className="eyebrow">Collaborated With</p>
-            <h2>Organizations and programs</h2>
+            <h2>Professional experience</h2>
+            <p className="muted">
+              Business analysis and analytics delivery across higher education and enterprise technology programs.
+            </p>
+          </div>
+          <div className="timeline">
+            {experience.map((role) => (
+              <div key={role.company} className="timeline-item">
+                <div className="timeline-header">
+                  <div>
+                    <h3>{role.role}</h3>
+                    <p className="muted">
+                      {role.company} · {role.location}
+                    </p>
+                  </div>
+                  <span className="badge ghost">{role.period}</span>
+                </div>
+                <ul>
+                  {role.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="section" id="education">
+          <div className="section-header">
+            <h2>Education</h2>
+            <p className="muted">Academic foundation in business analytics and information technology.</p>
+          </div>
+          <div className="timeline">
+            {education.map((item) => (
+              <div key={item.institution} className="timeline-item">
+                <div className="timeline-header">
+                  <div>
+                    <h3>{item.degree}</h3>
+                    <p className="muted">{item.institution}</p>
+                    <p className="muted">{item.location}</p>
+                  </div>
+                  <span className="badge ghost">{item.period}</span>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="logo-row">
-            {companies.map((company) => (
-              <div key={company.name} className="logo-pill">
-                <span className="logo-name">{company.name}</span>
-                <span className="logo-role">{company.role}</span>
+            {certifications.map((cert) => (
+              <div key={cert.name} className="logo-pill">
+                {cert.name} · {cert.issuer} · {cert.period}
               </div>
             ))}
           </div>
@@ -397,58 +460,16 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="experience">
+        <section className="section" id="achievements">
           <div className="section-header">
-            <h2>Professional experience</h2>
-            <p className="muted">
-              Business analysis and analytics delivery across higher education and enterprise technology programs.
-            </p>
+            <h2>Achievements & leadership</h2>
+            <p className="muted">Highlights from community leadership and organizational impact.</p>
           </div>
-          <div className="timeline">
-            {experience.map((role) => (
-              <div key={role.company} className="timeline-item">
-                <div className="timeline-header">
-                  <div>
-                    <h3>{role.role}</h3>
-                    <p className="muted">
-                      {role.company} · {role.location}
-                    </p>
-                  </div>
-                  <span className="badge ghost">{role.period}</span>
-                </div>
-                <ul>
-                  {role.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="section" id="education">
-          <div className="section-header">
-            <h2>Education</h2>
-            <p className="muted">Academic foundation in business analytics and information technology.</p>
-          </div>
-          <div className="timeline">
-            {education.map((item) => (
-              <div key={item.institution} className="timeline-item">
-                <div className="timeline-header">
-                  <div>
-                    <h3>{item.degree}</h3>
-                    <p className="muted">{item.institution}</p>
-                    <p className="muted">{item.location}</p>
-                  </div>
-                  <span className="badge ghost">{item.period}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="logo-row">
-            {certifications.map((cert) => (
-              <div key={cert.name} className="logo-pill">
-                {cert.name} · {cert.issuer} · {cert.period}
+          <div className="stack-grid">
+            {achievements.map((item) => (
+              <div key={item.title} className="stack-card">
+                <h3>{item.title}</h3>
+                <p className="muted">{item.details}</p>
               </div>
             ))}
           </div>
