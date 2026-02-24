@@ -5,7 +5,7 @@ import './App.css'
 
 const resumeUrl = '/Tejaswi%20Padigala%20Business%20and%20Data%20Analyst.pdf'
 const projectsUrl = '/projects.pdf'
-const portfolioUrl = 'https://saibharathpadigala.vercel.app/'
+const portfolioUrl = 'https://tejaswipadigala.vercel.app/'
 
 const profile = {
   name: 'Tejaswi Padigala',
@@ -305,9 +305,6 @@ function App() {
               <a className="btn ghost" href={resumeUrl} target="_blank" rel="noreferrer">
                 View resume
               </a>
-              <a className="btn ghost" href={portfolioUrl} target="_blank" rel="noreferrer">
-                View portfolio
-              </a>
             </div>
             <div className="hero-meta">
               <span>{profile.email}</span>
@@ -471,10 +468,6 @@ function App() {
               <div>
                 <p className="eyebrow">Phone</p>
                 <a href={`tel:${profile.phone}`}>{profile.phone}</a>
-              </div>
-              <div>
-                <p className="eyebrow">Location</p>
-                <span>{profile.location}</span>
               </div>
               <div className="contact-actions">
                 <a className="btn primary" href={`mailto:${profile.email}`}>
