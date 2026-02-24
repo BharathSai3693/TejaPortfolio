@@ -432,7 +432,6 @@ function App() {
         <section className="section" id="projects">
           <div className="section-header">
             <h2>Project experience</h2>
-            <p className="muted">Project details sourced from the projects portfolio.</p>
           </div>
           <div className="project-grid">
             {projects.map((project) => (
